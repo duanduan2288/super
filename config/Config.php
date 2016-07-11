@@ -11,7 +11,7 @@ class Config
 	public static function getConfig(){
 		return [
 			"LOGGER_LEVEL"=>100,
-			"LOGGER_FILE"=>date("Y-m-d").".log"
+			"LOGGER_FILE"=>"././logs/".date("Y-m-d").".log"
 		];
 	}
 }
