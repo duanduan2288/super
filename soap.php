@@ -1,17 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2016/7/13 0013
- * Time: 下午 10:52
- */
-$server = new SoapServer(null,[
-			"location"=>'http://www.super.com/soap.php',
-			"uri"=>"http://www.super.com/"
-]);
 
-$server->addFunction("getParam");
+require_once(__DIR__ .DIRECTORY_SEPARATOR ."autoload.php");
 
-function getParam(){
-	return "aa";
+//,array("location"=>"http://super.com/soap.php","uri"=>"soap.php")
+$soap = new SoapServer(null,array("location"=>"http://super.com/soap.php","uri"=>"soap.php"));
+$soap->setClass("OssUpload");
+$soap->handle();
+
+
+function getName($data){
+
+	return $data;
+}
+
+function getTitle($data){
+	return $data;
 }
